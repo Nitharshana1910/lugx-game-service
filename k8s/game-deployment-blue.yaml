@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lugx-game-service-blue
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lugx-game-service-blue
+  template:
+    metadata:
+      labels:
+        app: lugx-game-service-blue
+    spec:
+      containers:
+      - name: lugx-game-service
+        image: 476287788277.dkr.ecr.ap-south-1.amazonaws.com/lugx-game-service:latest
+        ports:
+        - containerPort: 3001
