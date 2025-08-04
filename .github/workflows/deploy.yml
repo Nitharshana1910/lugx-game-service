@@ -56,7 +56,7 @@ jobs:
 
     - name: Switch Ingress to Green
       run: |
-        kubectl patch ingress game-ingress \
+        kubectl patch ingress lugx-game-ingress \
           --type='json' \
           -p='[{"op": "replace", "path": "/spec/rules/0/http/paths/0/backend/service/name", "value":"lugx-game-service-green"}]'
 
